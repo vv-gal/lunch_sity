@@ -1,0 +1,347 @@
+* {
+    box-sizing: border-box;
+}
+
+/* общие стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* шапка */
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 25px 0;
+    padding: 0;
+}
+
+/*навигация */
+nav {
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #222;
+    margin-right: 30px;
+    padding: 0;
+}
+
+nav a:hover {
+    color: #d35400;
+}
+
+/* основной блок */
+main {
+    padding: 0 40px;
+    margin: 0;
+    max-width: 1000px;
+}
+
+/* заголовки секций */
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+/* о нас */
+.about {
+    padding: 0;
+    margin: 0;
+}
+
+.about img {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: 0 0 15px 0;
+}
+
+.about p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.5;
+    margin: 10px 0 20px 0;
+    padding: 0;
+    max-width: 850px;
+}
+
+/* преимущества */
+.advantages {
+    padding: 0;
+    margin: 0;
+}
+
+.advantages ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.advantages li {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* таблица */
+.popular {
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+table {
+    width: 100%;
+    max-width: 850px;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 700;
+}
+
+td {
+    font-weight: 400;
+}
+
+/*футер */
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    margin: 8px 0;
+    padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 0 3px;
+}
+
+footer a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/*формы */
+.form-section {
+    max-width: 600px;
+    padding: 20px 0;
+}
+
+.form-section form {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.form-section label,
+.form-label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="password"],
+.form-section input[type="file"],
+.form-section select,
+.form-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.form-section textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-weight: 400;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: 400 !important;
+    cursor: pointer;
+}
+
+.checkbox-label input {
+    width: auto;
+}
+
+.form-section button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-section button:hover {
+    background-color: #a04000;
+}
+
+/*вход*/
+.login-page {
+    background-image: url('login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    min-height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.login-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #d35400;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-form button:hover {
+    background-color: #a04000;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #d35400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #a04000;
+}
