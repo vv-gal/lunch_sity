@@ -1,0 +1,208 @@
+/* --- Сетка блюд (Grid) --- */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+/* --- Карточка блюда (Flex) --- */
+.dish-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: #fff;
+    filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+    transition: border 0.2s, background-color 0.2s;
+    border: 2px solid transparent;
+}
+
+.dish-card:hover {
+    border: 2px solid tomato; 
+}
+
+.dish-card:hover button {
+    background-color: #e0e0e0;
+}
+
+/* Изображение */
+.dish-card img {
+    width: 100%;
+    border-radius: 35px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+/* Цена */
+.dish-card .price {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+/* Название */
+.dish-card .name {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+}
+
+/* Вес */
+.dish-card .weight {
+    color: gray;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+}
+
+.dish-card button {
+    background-color: #f1eee9;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+/* --- Форма заказа --- */
+.order-section {
+    margin-top: 40px;
+}
+
+.form-columns {
+    display: flex;
+    gap: 50px;
+}
+
+.form-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-col h3 {
+    margin-bottom: 20px;
+}
+
+.form-col label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-col input[type="text"],
+.form-col input[type="email"],
+.form-col input[type="tel"],
+.form-col input[type="time"],
+.form-col select,
+.form-col textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.form-col small {
+    color: #777;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.radio-group {
+    margin-bottom: 15px;
+}
+
+.radio-group p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.radio-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.form-buttons .btn-submit {
+    background: #222;
+    color: #fff;
+    border: none;
+}
+
+.form-buttons button:hover {
+    opacity: 0.8;
+}
+
+/* --- Адаптивность страницы ланча --- */
+@media (max-width: 800px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Выбранная карточка */
+.dish-card.selected {
+    border: 2px solid tomato;
+}
+
+/* Блок «Ваш заказ» */
+.order-list p {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.order-list .empty-order {
+    color: #777;
+    font-style: italic;
+}
+
+.order-total {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.order-total p {
+    font-size: 16px;
+}

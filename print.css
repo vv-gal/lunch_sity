@@ -1,0 +1,33 @@
+@media print {
+    /* Скрываем ненужные элементы */
+    header nav,
+    footer,
+    button,
+    .sidebar,
+    .form-buttons {
+        display: none;
+    }
+
+    /* Убираем тени и фоны */
+    body {
+        background: #fff;
+        color: #000;
+        font-size: 12pt;
+    }
+
+    .dish-card {
+        filter: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+
+    main {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+}

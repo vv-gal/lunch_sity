@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-/* общие стили */
+/* ===== ОБЩИЕ СТИЛИ ===== */
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -11,64 +11,98 @@ body {
     background-color: #ffffff;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* шапка */
+/* ===== ШАПКА ===== */
 header {
     background-color: #ffffff;
     padding: 20px 40px;
-    margin: 0;
+    border-bottom: 1px solid #eee;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
     font-size: 36px;
     font-weight: 700;
-    color: #222;
-    margin: 0 0 25px 0;
-    padding: 0;
+    margin: 0 0 20px 0;
 }
 
-/*навигация */
+/* ===== НАВИГАЦИЯ (Flex) ===== */
 nav {
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 nav a {
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    font-weight: 400;
     color: #222;
-    margin-right: 30px;
-    padding: 0;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #d35400;
+    color: tomato;
 }
 
-/* основной блок */
+nav a.active {
+    color: tomato;
+    font-weight: 700;
+}
+
+/* ===== ОСНОВНОЙ БЛОК ===== */
 main {
-    padding: 0 40px;
-    margin: 0;
-    max-width: 1000px;
+    flex-grow: 1;
+    padding: 20px 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* заголовки секций */
 h2 {
-    font-family: 'Roboto', sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: #222;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    padding: 0;
+    margin: 30px 0 15px 0;
 }
 
-/* о нас */
-.about {
+/* ===== СЕТКА ГЛАВНОЙ (Flex) ===== */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.main-content {
+    flex: 3;
+    min-width: 0;
+}
+
+.sidebar {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 250px;
+}
+
+.sidebar h3 {
+    margin: 0 0 15px 0;
+    font-size: 20px;
+}
+
+.sidebar p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* ===== СЕКЦИИ ===== */
+.about,
+.advantages,
+.popular {
     padding: 0;
     margin: 0;
 }
@@ -78,24 +112,14 @@ h2 {
     max-width: 850px;
     height: auto;
     display: block;
-    margin: 0 0 15px 0;
+    margin-bottom: 15px;
 }
 
 .about p {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    font-weight: 400;
     color: #333;
     line-height: 1.5;
-    margin: 10px 0 20px 0;
-    padding: 0;
     max-width: 850px;
-}
-
-/* преимущества */
-.advantages {
-    padding: 0;
-    margin: 0;
 }
 
 .advantages ul {
@@ -104,19 +128,16 @@ h2 {
 }
 
 .advantages li {
-    font-family: 'Roboto', sans-serif;
     font-size: 18px;
-    font-weight: 400;
     color: #444;
     margin-bottom: 10px;
 }
 
-/* таблица */
 .popular {
-    padding: 0;
-    margin: 0 0 40px 0;
+    margin-bottom: 40px;
 }
 
+/* ===== ТАБЛИЦА ===== */
 table {
     width: 100%;
     max-width: 850px;
@@ -128,8 +149,6 @@ th, td {
     border: 1px solid #999;
     padding: 12px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
     color: #333;
 }
 
@@ -138,35 +157,23 @@ th {
     font-weight: 700;
 }
 
-td {
-    font-weight: 400;
-}
-
-/*футер */
+/* ===== ФУТЕР ===== */
 footer {
     background-color: black;
     color: white;
     padding: 20px 40px;
-    margin-top: 30px;
     text-align: center;
+    margin-top: auto;
 }
 
 footer p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: white;
     margin: 8px 0;
-    padding: 0;
 }
 
 footer a {
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
     font-weight: 700;
     color: #ffffff;
-    padding: 0 3px;
 }
 
 footer a:hover {
@@ -174,7 +181,7 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/*формы */
+/* ===== ФОРМЫ ===== */
 .form-section {
     max-width: 600px;
     padding: 20px 0;
@@ -190,11 +197,9 @@ footer a:hover {
 .form-section label,
 .form-label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 15px 0 5px 0;
     font-size: 15px;
     font-weight: 500;
-    color: #333;
 }
 
 .form-section input[type="text"],
@@ -202,14 +207,15 @@ footer a:hover {
 .form-section input[type="password"],
 .form-section input[type="file"],
 .form-section select,
-.form-section textarea {
+.form-section textarea,
+.login-form input[type="text"],
+.login-form input[type="password"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 15px;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
 }
 
 .form-section textarea {
@@ -220,16 +226,15 @@ footer a:hover {
 .radio-group label {
     display: inline-block;
     margin-right: 20px;
-    margin-top: 5px;
     font-weight: 400;
 }
 
 .checkbox-label {
-    display: flex !important;
+    display: flex;
     align-items: center;
     gap: 8px;
     margin-top: 20px;
-    font-weight: 400 !important;
+    font-weight: 400;
     cursor: pointer;
 }
 
@@ -237,9 +242,11 @@ footer a:hover {
     width: auto;
 }
 
-.form-section button {
-    margin-top: 20px;
+/* ===== КНОПКИ ===== */
+.form-section button,
+.login-form button {
     padding: 12px 30px;
+    margin-top: 20px;
     background-color: #d35400;
     color: white;
     border: none;
@@ -250,21 +257,25 @@ footer a:hover {
     font-family: 'Roboto', sans-serif;
 }
 
-.form-section button:hover {
+.login-form button {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.form-section button:hover,
+.login-form button:hover {
     background-color: #a04000;
 }
 
-/*вход*/
+/* ===== СТРАНИЦА ВХОДА ===== */
 .login-page {
     background-image: url('login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     min-height: 100vh;
     margin: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -281,52 +292,18 @@ footer a:hover {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
 }
 
 .login-form h2 {
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: #222;
+    margin: 0 0 20px 0;
 }
 
 .login-form label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin: 15px 0 5px 0;
     font-size: 15px;
     font-weight: 500;
-    color: #333;
-}
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-}
-
-.login-form button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 25px;
-    background-color: #d35400;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: 'Roboto', sans-serif;
-}
-
-.login-form button:hover {
-    background-color: #a04000;
 }
 
 .back-link {
@@ -338,10 +315,27 @@ footer a:hover {
 .back-link a {
     text-decoration: none;
     color: #d35400;
-    font-family: 'Roboto', sans-serif;
 }
 
 .back-link a:hover {
     text-decoration: underline;
     color: #a04000;
+}
+
+/* ===== АДАПТИВНОСТЬ ГЛАВНОЙ ===== */
+@media (max-width: 800px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    .sidebar {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    header, main, footer {
+        padding: 15px;
+    }
+    h1 { font-size: 24px; }
+    th, td { padding: 6px; font-size: 14px; }
 }
