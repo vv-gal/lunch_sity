@@ -1,4 +1,4 @@
-/* --- Сетка блюд (Grid) --- */
+/* --- РЎРµС‚РєР° Р±Р»СЋРґ (Grid) --- */
 .dishes-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -6,7 +6,7 @@
     margin-bottom: 40px;
 }
 
-/* --- Карточка блюда (Flex) --- */
+/* --- РљР°СЂС‚РѕС‡РєР° Р±Р»СЋРґР° (Flex) --- */
 .dish-card {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     background-color: #e0e0e0;
 }
 
-/* Изображение */
+/* Р�Р·РѕР±СЂР°Р¶РµРЅРёРµ */
 .dish-card img {
     width: 100%;
     border-radius: 35px;
@@ -35,21 +35,21 @@
     object-fit: cover;
 }
 
-/* Цена */
+/* Р¦РµРЅР° */
 .dish-card .price {
     font-size: 24px;
     font-weight: 700;
     margin: 0 0 5px 0;
 }
 
-/* Название */
+/* РќР°Р·РІР°РЅРёРµ */
 .dish-card .name {
     font-size: 20px;
     margin: 0 0 10px 0;
     flex-grow: 1;
 }
 
-/* Вес */
+/* Р’РµСЃ */
 .dish-card .weight {
     color: gray;
     font-size: 14px;
@@ -68,7 +68,7 @@
     width: 100%;
 }
 
-/* --- Форма заказа --- */
+/* --- Р¤РѕСЂРјР° Р·Р°РєР°Р·Р° --- */
 .order-section {
     margin-top: 40px;
 }
@@ -165,7 +165,7 @@
     opacity: 0.8;
 }
 
-/* --- Адаптивность страницы ланча --- */
+/* --- РђРґР°РїС‚РёРІРЅРѕСЃС‚СЊ СЃС‚СЂР°РЅРёС†С‹ Р»Р°РЅС‡Р° --- */
 @media (max-width: 800px) {
     .dishes-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -181,12 +181,12 @@
         grid-template-columns: 1fr;
     }
 }
-/* Выбранная карточка */
+/* Р’С‹Р±СЂР°РЅРЅР°СЏ РєР°СЂС‚РѕС‡РєР° */
 .dish-card.selected {
     border: 2px solid tomato;
 }
 
-/* Блок «Ваш заказ» */
+/* Р‘Р»РѕРє В«Р’Р°С€ Р·Р°РєР°Р·В» */
 .order-list p {
     margin: 0 0 15px 0;
     font-size: 15px;
@@ -205,4 +205,139 @@
 
 .order-total p {
     font-size: 16px;
+}
+/* --- Фильтры --- */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filters button {
+    padding: 8px 20px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filters button:hover {
+    background-color: #f1eee9;
+}
+
+.filters button.active {
+    background-color: tomato;
+    color: #fff;
+    border-color: tomato;
+}
+/* ===== БЛОК ВАРИАНТОВ ЛАНЧЕЙ ===== */
+.combo-section {
+    margin-bottom: 50px;
+}
+
+.combo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.combo-card {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.1));
+    flex-wrap: wrap;
+}
+
+.combo-dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.combo-dish img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.combo-dish img:hover {
+    transform: translateY(-10px) scale(1.1);
+}
+
+.combo-dish p {
+    margin: 8px 0 0 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+.combo-note {
+    margin-top: 20px;
+    font-size: 12px; /* на 2 пункта меньше подписи (14 - 2) */
+    color: #777;
+}
+
+@media (max-width: 800px) {
+    .combo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .combo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===== УВЕДОМЛЕНИЕ ===== */
+.notification-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.notification-box {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.notification-box p {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.notification-box button {
+    padding: 10px 30px;
+    background: #d35400;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.notification-box button:hover {
+    background: #222;
+    color: #ffcc00;
 }
